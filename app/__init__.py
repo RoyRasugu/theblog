@@ -1,12 +1,12 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from config import config_options
-from flask_sqlachemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_uploads import UploadSet,configure_uploads,IMAGES
 from flask_mail import Mail
 
-boootstrap = Bootstrap()
+bootstrap = Bootstrap()
 db = SQLAlchemy()
 mail = Mail()
 
@@ -31,7 +31,6 @@ def create_app(config_name):
     
     # configure UploadSet
     configure_uploads(app,photos)
-
 
     # Registering the blueprint
     from .main import main as main_blueprint
